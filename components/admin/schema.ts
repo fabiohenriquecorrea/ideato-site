@@ -6,6 +6,7 @@ export type Field =
   | { kind: "number"; key: string; label: string; min: number; max: number; suffix?: string; hint?: string }
   | { kind: "range"; key: string; label: string; min: number; max: number; suffix?: string; hint?: string }
   | { kind: "media"; key: string; label: string; hint?: string }
+  | { kind: "vimeo"; key: string; label: string; hint?: string }
   | { kind: "select"; key: string; label: string; options: { value: string; label: string }[]; hint?: string }
   | { kind: "toggle"; key: string; label: string; hint?: string }
   | { kind: "strings"; key: string; label: string; addLabel: string; hint?: string }
@@ -54,8 +55,8 @@ const heroSlideFields: Field[] = [
       { value: "video", label: "Vídeo" },
     ],
   },
-  { kind: "media", key: "src", label: "Arquivo" },
-  { kind: "media", key: "poster", label: "Capa do vídeo", hint: "Aparece enquanto o vídeo carrega. Só para vídeo." },
+  { kind: "media", key: "src", label: "Arquivo", hint: "Para vídeo, prefira um link do Vimeo: toca sem som, em loop, sem pesar o site." },
+  { kind: "media", key: "poster", label: "Capa do vídeo", hint: "Imagem que aparece enquanto o vídeo carrega. Só para vídeo." },
   { kind: "text", key: "label", label: "Nome interno", hint: "Só para você identificar o slide aqui no editor." },
   { kind: "text", key: "alt", label: "Descrição (acessibilidade)", hint: "Descreva a imagem para quem usa leitor de tela." },
 ];
@@ -204,6 +205,12 @@ export function buildPages(content: SiteContent): Page[] {
         fields: [
           { kind: "textarea", key: "challenge", label: "Desafio", rows: 4 },
           { kind: "textarea", key: "decision", label: "Decisão", rows: 4 },
+          {
+            kind: "vimeo",
+            key: "video",
+            label: "Vídeo do projeto (Vimeo)",
+            hint: "Cole o link do vídeo no Vimeo. Aparece com play, som e tela cheia na página do projeto. Vazio = sem vídeo.",
+          },
           { kind: "strings", key: "deliverables", label: "Entregas", addLabel: "Adicionar entrega" },
         ],
       },

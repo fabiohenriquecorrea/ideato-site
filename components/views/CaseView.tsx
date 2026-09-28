@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "@/components/Icons";
 import { Media } from "@/components/Media";
+import { VimeoPlayer } from "@/components/VimeoPlayer";
 import type { SiteContent } from "@/lib/types";
 
 export function CaseView({ content, slug }: { content: SiteContent; slug: string }) {
@@ -35,6 +36,12 @@ export function CaseView({ content, slug }: { content: SiteContent; slug: string
           {work.illustrative && <figcaption className="t-caption">Imagem ilustrativa</figcaption>}
         </figure>
       </div>
+
+      {work.video && (
+        <div className="wrap case-video" data-edit={`case:${work.slug}:conteudo`}>
+          <VimeoPlayer src={work.video} title={`Vídeo — ${work.title}`} />
+        </div>
+      )}
 
       <section className="wrap section" aria-label="Sobre o projeto" data-edit={`case:${work.slug}:conteudo`}>
         <div className="case-body">

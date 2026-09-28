@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { isVideo } from "@/lib/types";
 import { resolveMedia } from "@/lib/media-url";
+import { isVimeo } from "@/lib/vimeo";
+import { VimeoBackground } from "./VimeoBackground";
 
 type Props = {
   src: string;
@@ -14,6 +16,7 @@ type Props = {
 /** Imagem ou vídeo, preenchendo o contêiner (que precisa de position: relative). */
 export function Media({ src, alt, sizes, priority, poster, className }: Props) {
   if (!src) return <div className={`media-empty ${className ?? ""}`} aria-hidden="true" />;
+  if (isVimeo(src)) return <VimeoBackground src={src} title={alt} />;
   if (isVideo(src)) {
     return (
       <video

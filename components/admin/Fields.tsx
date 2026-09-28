@@ -2,6 +2,7 @@
 
 import { useId, useState } from "react";
 import type { Work } from "@/lib/types";
+import { isVimeo, parseVimeo } from "@/lib/vimeo";
 import { MediaPicker, Thumb } from "./MediaPicker";
 import { getAt, type Field } from "./schema";
 
@@ -27,8 +28,48 @@ function move<T>(arr: T[], from: number, to: number) {
   return next;
 }
 
-function MediaField({ label, hint, value, onChange }: { label: string; hint?: string; value: string; onChange: (v: string) => void }) {
+function VimeoInput({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const id = useId();
+  const [text, setText] = useState(isVimeo(value) ? value : "");
+  const invalid = text.trim() !== "" && !isVimeo(text);
+  return (
+    <div className="ed-vimeo">
+      <label htmlFor={id} className="ed-hint">
+        ou cole um link do Vimeo (vídeos pesados ficam lá, não no site)
+      </label>
+      <div className="ed-vimeo-row">
+        <input
+          id={id}
+          className="ed-input"
+          placeholder="https://vimeo.com/123456789"
+          value={text}
+          aria-invalid={invalid}
+          onChange={(e) => {
+            setText(e.target.value);
+            if (isVimeo(e.target.value)) onChange(e.target.value.trim());
+          }}
+        />
+      </div>
+      {invalid && <span className="ed-error">Esse não parece um link do Vimeo. Copie o endereço do vídeo no Vimeo.</span>}
+    </div>
+  );
+}
+
+function MediaField({
+  label,
+  hint,
+  value,
+  onChange,
+  allowVimeo = true,
+}: {
+  label: string;
+  hint?: string;
+  value: string;
+  onChange: (v: string) => void;
+  allowVimeo?: boolean;
+}) {
   const [open, setOpen] = useState(false);
+  const vimeo = parseVimeo(value);
   return (
     <div className="ed-field">
       <span className="ed-label">{label}</span>
@@ -38,7 +79,9 @@ function MediaField({ label, hint, value, onChange }: { label: string; hint?: st
           <span className="ed-media-over">{value ? "Trocar" : "Escolher"}</span>
         </button>
         <div className="ed-media-meta">
-          <span className="ed-media-name">{value ? value.split("/").pop() : "Nenhum arquivo"}</span>
+          <span className="ed-media-name">
+            {vimeo ? `Vimeo · ${vimeo.id}` : value ? value.split("/").pop() : "Nenhum arquivo"}
+          </span>
           <div className="ed-media-actions">
             <button type="button" className="ed-link" onClick={() => setOpen(true)}>
               {value ? "Trocar" : "Escolher"}
@@ -51,6 +94,7 @@ function MediaField({ label, hint, value, onChange }: { label: string; hint?: st
           </div>
         </div>
       </div>
+      {allowVimeo && <VimeoInput key={value} value={value} onChange={onChange} />}
       {hint && <span className="ed-hint">{hint}</span>}
       {open && (
         <MediaPicker
@@ -227,6 +271,28 @@ export function FieldView({
           <span>{field.label}</span>
         </label>
       );
+    case "vimeo": {
+      const v = (value as string) ?? "";
+      const bad = v.trim() !== "" && !isVimeo(v);
+      return (
+        <label className="ed-field" htmlFor={id}>
+          <span className="ed-label">{field.label}</span>
+          <input
+            id={id}
+            className="ed-input"
+            placeholder="https://vimeo.com/123456789"
+            value={v}
+            aria-invalid={bad}
+            onChange={(e) => onChange(field.key, e.target.value.trim())}
+          />
+          {bad ? (
+            <span className="ed-error">Esse não parece um link do Vimeo.</span>
+          ) : (
+            field.hint && <span className="ed-hint">{field.hint}</span>
+          )}
+        </label>
+      );
+    }
     case "media":
       return (
         <MediaField

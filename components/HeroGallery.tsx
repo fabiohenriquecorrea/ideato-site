@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { Slide } from "@/lib/types";
 import { resolveMedia } from "@/lib/media-url";
+import { isVimeo } from "@/lib/vimeo";
+import { VimeoBackground } from "./VimeoBackground";
 
 type Props = { slides: Slide[]; interval: number };
 
@@ -64,7 +66,12 @@ export function HeroGallery({ slides, interval }: Props) {
               data-state={state}
               onTransitionEnd={() => i === prev && setPrev(null)}
             >
-              {s.type === "video" ? (
+              {isVimeo(s.src) ? (
+                <>
+                  {s.poster && <Image src={resolveMedia(s.poster)} alt="" fill sizes="100vw" priority={i === 0} />}
+                  {(i === index || i === prev) && <VimeoBackground src={s.src} />}
+                </>
+              ) : s.type === "video" ? (
                 <video
                   ref={(el) => {
                     videos.current[i] = el;

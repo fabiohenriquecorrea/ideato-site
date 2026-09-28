@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { isVideo } from "@/lib/types";
+import { isVimeo, parseVimeo } from "@/lib/vimeo";
 import { MAX_UPLOAD_MB, type MediaItem, type Store } from "./store";
 
 export const MediaContext = createContext<{ store: Store; onUploaded: () => void } | null>(null);
@@ -11,9 +12,43 @@ const useMedia = () => {
   return ctx;
 };
 
+const vimeoThumbs = new Map<string, Promise<string | null>>();
+function vimeoThumb(src: string) {
+  if (!vimeoThumbs.has(src)) {
+    vimeoThumbs.set(
+      src,
+      fetch(`https://vimeo.com/api/oembed.json?width=320&url=${encodeURIComponent(src)}`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => d?.thumbnail_url ?? null)
+        .catch(() => null),
+    );
+  }
+  return vimeoThumbs.get(src)!;
+}
+
+function VimeoThumb({ src, className }: { src: string; className?: string }) {
+  const [url, setUrl] = useState<string | null>(null);
+  useEffect(() => {
+    let alive = true;
+    vimeoThumb(src).then((u) => alive && setUrl(u));
+    return () => {
+      alive = false;
+    };
+  }, [src]);
+  return url ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img className={`ed-thumb ${className ?? ""}`} src={url} alt="" loading="lazy" />
+  ) : (
+    <span className={`ed-thumb is-vimeo ${className ?? ""}`} aria-hidden="true">
+      Vimeo
+    </span>
+  );
+}
+
 export function Thumb({ src, className }: { src?: string; className?: string }) {
   const ctx = useContext(MediaContext);
   if (!src) return <span className={`ed-thumb is-empty ${className ?? ""}`} aria-hidden="true" />;
+  if (isVimeo(src)) return <VimeoThumb src={src} className={className} />;
   const url = ctx ? ctx.store.mediaUrl(src) : src;
   return isVideo(src) ? (
     <video className={`ed-thumb ${className ?? ""}`} src={url} muted preload="metadata" aria-hidden="true" />

@@ -1262,3 +1262,22 @@ textarea.ed-input {
   background: var(--ceu);
   animation: pulse 900ms ease-in-out infinite alternate;
 }
+
+/* ── Vimeo ──────────────────────────────── */
+.ed-thumb.is-vimeo {
+  display: grid;
+  place-items: center;
+  background: #1ab7ea;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+.ed-vimeo {
+  display: grid;
+  gap: 6px;
+  margin-top: 4px;
+}
+.ed-vimeo .ed-input {
+  font-size: 13px;
+  padding: 7px 10px;
+}

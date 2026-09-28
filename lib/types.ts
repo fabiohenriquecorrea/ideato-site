@@ -24,6 +24,8 @@ export type Work = {
   challenge: string;
   decision: string;
   deliverables: string[];
+  /** link do Vimeo com o vídeo completo do projeto (opcional) */
+  video?: string;
 };
 
 export type UiText = {

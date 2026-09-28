@@ -7,6 +7,8 @@ import { flushSync } from "react-dom";
 import { FRONTS, isVideo, type Front, type Work } from "@/lib/types";
 import { ArrowUpRight } from "./Icons";
 import { resolveMedia } from "@/lib/media-url";
+import { isVimeo } from "@/lib/vimeo";
+import { VimeoBackground } from "./VimeoBackground";
 
 type Filter = "Todos" | Front;
 
@@ -64,7 +66,9 @@ export function WorkMosaic({ works, allLabel = "Todos" }: { works: Work[]; allLa
             <Link href={`/trabalho/${w.slug}`} className="tile-link">
               <div className="tile-media">
                 {w.image &&
-                  (isVideo(w.image) ? (
+                  (isVimeo(w.image) ? (
+                    <VimeoBackground src={w.image} title={w.alt} />
+                  ) : isVideo(w.image) ? (
                     <video src={resolveMedia(w.image)} muted loop playsInline autoPlay preload="metadata" aria-hidden="true" />
                   ) : (
                     <Image
