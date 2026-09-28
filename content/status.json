@@ -1,0 +1,21 @@
+{
+  "mode": "online",
+  "maintenance": {
+    "title1": "Voltamos",
+    "title2": "já, já.",
+    "text": "Estamos fazendo alguns ajustes no site. Enquanto isso, fale com a gente pelo Instagram.",
+    "image": "/images/road.webp",
+    "opacity": 30,
+    "note": "Em manutenção",
+    "showContact": true
+  },
+  "construction": {
+    "title1": "Da ideia",
+    "title2": "ao ato.",
+    "text": "O novo site do Ideato Studio está saindo do papel. Enquanto isso, acompanhe o trabalho pelo Instagram.",
+    "image": "/images/field.webp",
+    "opacity": 30,
+    "note": "Site em construção",
+    "showContact": true
+  }
+}

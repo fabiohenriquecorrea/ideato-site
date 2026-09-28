@@ -1,0 +1,195 @@
+{
+  "ui": {
+    "logoScale": 100,
+    "navWork": "Trabalho",
+    "navStudio": "Estúdio",
+    "headerCta": "Falar com o estúdio",
+    "filterAll": "Todos",
+    "caseBack": "Trabalho",
+    "caseNext": "Próximo projeto",
+    "footerWork": "Trabalho",
+    "footerStudio": "Estúdio",
+    "footerTop": "Voltar ao topo"
+  },
+  "site": {
+    "name": "Ideato Studio",
+    "base": "Maringá · PR",
+    "lead": "Fabio Correa",
+    "instagram": "ideatostudio",
+    "email": "",
+    "whatsapp": "",
+    "seoTitle": "Ideato Studio — Da ideia ao ato",
+    "seoDescription": "Estúdio de marca, social, imagem aérea e site. Um só raciocínio para tudo o que a sua empresa mostra."
+  },
+  "home": {
+    "hero": {
+      "title1": "Da ideia",
+      "title2": "ao ato.",
+      "lead": "Estúdio de marca, social, imagem aérea e site. Um só raciocínio para tudo o que a sua empresa mostra.",
+      "ctaPrimary": "Falar com o estúdio",
+      "ctaSecondary": "Ver trabalho",
+      "interval": 6,
+      "slides": [
+        {
+          "type": "video",
+          "src": "/video/road.mp4",
+          "poster": "/images/road.webp",
+          "alt": "Voo aéreo sobre uma estrada sinuosa atravessando uma floresta ao entardecer.",
+          "label": "Imagem aérea"
+        },
+        {
+          "type": "image",
+          "src": "/images/brand.webp",
+          "alt": "Parede branca com grande símbolo em asterisco verde-lima e blocos geométricos grafite.",
+          "label": "Marca"
+        },
+        {
+          "type": "image",
+          "src": "/images/latte.webp",
+          "alt": "Barista desenhando latte art em uma xícara sobre balcão de madeira.",
+          "label": "Social"
+        },
+        {
+          "type": "image",
+          "src": "/images/desk.webp",
+          "alt": "Pessoa trabalhando em um notebook em um estúdio claro e minimalista.",
+          "label": "Site"
+        }
+      ]
+    },
+    "work": {
+      "title1": "Já saiu",
+      "title2": "do papel.",
+      "intro": "Marcas, conteúdos, imagens e sites — cada um nasceu de uma decisão pensada. Filtre por frente ou abra um projeto para ver o raciocínio."
+    },
+    "band": {
+      "title1": "Ver de cima",
+      "title2": "muda a decisão.",
+      "text": "Distância dá clareza. Antes de mexer em qualquer peça, a gente olha a marca inteira — do posicionamento ao post.",
+      "image": "/images/city.webp",
+      "alt": "Panorama aéreo ao entardecer de uma cidade arborizada."
+    },
+    "studio": {
+      "title1": "Raciocínio antes",
+      "title2": "da estética.",
+      "lead": "O Ideato é um estúdio de Maringá que junta marca, conteúdo, imagem aérea e site num só lugar — para que cada peça saia da mesma decisão.",
+      "body": "A maioria das empresas contrata cada frente separadamente: uma agência para as redes, um piloto para o drone, alguém para o site. O resultado são peças soltas que não conversam. A gente começa pelo posicionamento e deixa ele guiar o resto — do ângulo do voo à legenda do post.",
+      "quote": "Cada entrega é o resultado de uma decisão pensada, não um produto avulso.",
+      "quoteAuthor": "posicionamento Ideato",
+      "image": "/images/field.webp",
+      "alt": "Drone profissional sobrevoando um campo dourado ao pôr do sol.",
+      "caption": "Imagem aérea · ilustrativa"
+    }
+  },
+  "contact": {
+    "title1": "Tem uma ideia?",
+    "title2": "Vamos ao ato.",
+    "cta": "Mandar mensagem",
+    "image": "/images/lake.webp",
+    "opacity": 18
+  },
+  "works": [
+    {
+      "slug": "ponto-de-vista",
+      "front": "Imagem",
+      "title": "Ponto de vista",
+      "summary": "Série aérea que mostra a escala de um lugar — um voo planejado como roteiro, não como registro.",
+      "image": "/images/lake.webp",
+      "alt": "Vista aérea de um lago cercado de árvores em um parque urbano ao entardecer.",
+      "size": "tall",
+      "illustrative": true,
+      "challenge": "As imagens que existiam mostravam o lugar, mas não o que ele tem de único. Tudo parecia igual a qualquer outro.",
+      "decision": "Tratar o voo como roteiro: ângulo, altura e horário definidos pela história que a marca quer contar, e não pelo que dá para filmar.",
+      "deliverables": [
+        "Captação aérea em foto e vídeo",
+        "Edição para reels, site e apresentações",
+        "Banco de imagens organizado"
+      ]
+    },
+    {
+      "slug": "marca-em-escala",
+      "front": "Marca",
+      "title": "Marca em escala",
+      "summary": "Sistema de marca pensado para funcionar do avatar de 40 pixels à parede de quatro metros.",
+      "image": "/images/brand.webp",
+      "alt": "Parede branca com grande símbolo em asterisco verde-lima e blocos geométricos grafite.",
+      "size": "lg",
+      "illustrative": true,
+      "challenge": "Site, redes, materiais e apresentações falavam línguas diferentes e não refletiam o tamanho real da empresa.",
+      "decision": "Um símbolo, duas cores de decisão e regras curtas. Cada peça nova nasce do mesmo raciocínio, não de uma referência solta.",
+      "deliverables": [
+        "Diagnóstico da comunicação atual",
+        "Posicionamento e tom de voz",
+        "Guia rápido e templates padronizados"
+      ]
+    },
+    {
+      "slug": "presenca-com-rotina",
+      "front": "Social",
+      "title": "Presença com rotina",
+      "summary": "Linha editorial que troca o post avulso por uma narrativa constante, com a mesma voz em todo canal.",
+      "image": "/images/latte.webp",
+      "alt": "Barista desenhando latte art em uma xícara sobre balcão de madeira.",
+      "size": "tall",
+      "illustrative": true,
+      "challenge": "O perfil alternava datas comemorativas e posts genéricos. Nada dizia quem a empresa era ou por que escolher ela.",
+      "decision": "Planejamento mensal ancorado no que a empresa faz de verdade — processo, pessoas e resultado — em vez de seguir o calendário.",
+      "deliverables": [
+        "Planejamento editorial mensal",
+        "Publicações em carrossel, post e reels",
+        "Legendas, roteiros e relatório de resultados"
+      ]
+    },
+    {
+      "slug": "embalagem-que-fala",
+      "front": "Marca",
+      "title": "Embalagem que fala",
+      "summary": "Identidade aplicada ao produto: um detalhe de cor que o cliente reconhece antes de ler o nome.",
+      "image": "/images/ceramics.webp",
+      "alt": "Xícaras de cerâmica foscas ao lado de uma caixa kraft com etiqueta verde-lima.",
+      "size": "sm",
+      "illustrative": true,
+      "challenge": "O produto era bom, mas chegava ao cliente numa caixa genérica — sem nada que lembrasse de onde veio.",
+      "decision": "Menos elementos, mais consistência: um só ponto de cor e o mesmo cuidado da loja aplicado ao pacote.",
+      "deliverables": [
+        "Aplicação da marca em embalagem",
+        "Etiquetas e materiais de envio",
+        "Fotografia de produto"
+      ]
+    },
+    {
+      "slug": "quem-faz-aparece",
+      "front": "Social",
+      "title": "Quem faz, aparece",
+      "summary": "Retratos e bastidores que colocam as pessoas no centro da comunicação da marca.",
+      "image": "/images/portrait.webp",
+      "alt": "Retrato de uma empreendedora em seu ateliê de cerâmica, com luz natural.",
+      "size": "sm",
+      "illustrative": true,
+      "challenge": "A marca tinha rosto, mas ele não aparecia. O conteúdo parecia de qualquer empresa do segmento.",
+      "decision": "Transformar a rotina real em pauta: retratos, processo e mãos no trabalho — o que nenhum concorrente pode copiar.",
+      "deliverables": [
+        "Sessão de retratos e bastidores",
+        "Série de posts e reels",
+        "Roteiro de stories"
+      ]
+    },
+    {
+      "slug": "site-como-referencia",
+      "front": "Site",
+      "title": "O site como referência",
+      "summary": "Um site simples, atualizado todo mês, que vira a fonte oficial sobre a empresa.",
+      "image": "/images/desk.webp",
+      "alt": "Pessoa trabalhando em um notebook em um estúdio claro e minimalista.",
+      "size": "wide",
+      "illustrative": true,
+      "challenge": "As informações importantes estavam espalhadas entre conversas, PDFs e redes. Cada cliente recebia uma resposta diferente.",
+      "decision": "Uma estrutura enxuta, com conteúdo revisado mensalmente, para que o site seja a resposta — e não mais uma pergunta.",
+      "deliverables": [
+        "Arquitetura de conteúdo",
+        "Design e desenvolvimento",
+        "Atualização mensal de textos e imagens"
+      ]
+    }
+  ]
+}
