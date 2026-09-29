@@ -31,8 +31,8 @@
       "interval": 6,
       "slides": [
         {
-          "type": "video",
-          "src": "/video/road.mp4",
+          "type": "image",
+          "src": "/uploads/mum2mnro-04-business-card.png",
           "poster": "/images/road.webp",
           "alt": "Voo aéreo sobre uma estrada sinuosa atravessando uma floresta ao entardecer.",
           "label": "Imagem aérea"
@@ -94,7 +94,7 @@
       "front": "Imagem",
       "title": "Ponto de vista",
       "summary": "Série aérea que mostra a escala de um lugar — um voo planejado como roteiro, não como registro.",
-      "image": "/images/lake.webp",
+      "image": "/uploads/mulrtfr0-fundo-cidade.webp",
       "alt": "Vista aérea de um lago cercado de árvores em um parque urbano ao entardecer.",
       "size": "tall",
       "illustrative": true,
