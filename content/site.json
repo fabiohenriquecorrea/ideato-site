@@ -1,6 +1,6 @@
 {
   "ui": {
-    "logoScale": 123,
+    "logoScale": 127,
     "navWork": "Portifólio",
     "navStudio": "Sobre",
     "headerCta": "Falar com o estúdio",
@@ -38,22 +38,41 @@
           "label": "Imagem aérea"
         },
         {
+          "type": "video",
+          "src": "/uploads/mum2vf4y-solucao.mp4",
+          "alt": "Barista desenhando latte art em uma xícara sobre balcão de madeira.",
+          "label": "Social",
+          "poster": "/uploads/mum2vf4y-solucao.mp4"
+        },
+        {
           "type": "image",
-          "src": "/images/brand.webp",
+          "src": "/uploads/mum2tjj9-psd-2-1.png",
           "alt": "Parede branca com grande símbolo em asterisco verde-lima e blocos geométricos grafite.",
           "label": "Marca"
         },
         {
           "type": "image",
-          "src": "/images/latte.webp",
-          "alt": "Barista desenhando latte art em uma xícara sobre balcão de madeira.",
-          "label": "Social"
+          "src": "/uploads/mum32gfs-prancheta-8.jpg",
+          "alt": "Pessoa trabalhando em um notebook em um estúdio claro e minimalista.",
+          "label": "Site"
         },
         {
           "type": "image",
-          "src": "/images/desk.webp",
-          "alt": "Pessoa trabalhando em um notebook em um estúdio claro e minimalista.",
-          "label": "Site"
+          "src": "/uploads/mum32kdf-prancheta-6.jpg",
+          "alt": "",
+          "label": "Novo slide"
+        },
+        {
+          "type": "image",
+          "src": "/uploads/mum35ni3-6262-logo-mockup.png",
+          "alt": "",
+          "label": "Novo slide"
+        },
+        {
+          "type": "image",
+          "src": "/uploads/mum329da-prancheta-13.jpg",
+          "alt": "",
+          "label": "Novo slide"
         }
       ]
     },
