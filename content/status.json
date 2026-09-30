@@ -1,11 +1,11 @@
 {
-  "mode": "maintenance",
+  "mode": "online",
   "maintenance": {
     "title1": "Voltamos",
     "title2": "já, já.",
     "text": "Estamos fazendo alguns ajustes no site. Enquanto isso, fale com a gente pelo Instagram.",
     "image": "/images/road.webp",
-    "opacity": 30,
+    "opacity": 12,
     "note": "Em manutenção",
     "showContact": true
   },
